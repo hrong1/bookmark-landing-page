@@ -4,7 +4,7 @@ import NavMenu from '../navMenu/nav';
 const WebFooter = () => {
 
     return (
-        <footer className='webHeader'>
+        <footer className='webFooter'>
             <NavMenu />
         </footer>
     )

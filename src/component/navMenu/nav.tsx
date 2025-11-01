@@ -13,7 +13,7 @@ interface NavItem {
 }
 
 const navList: NavItem[] = [
-    {id: 1, name: 'Features', link: '#'},
+    {id: 1, name: 'Features', link: '#features'},
     {id: 2, name: 'Pricing', link: '#'},
     {id: 3, name: 'Contact', link: '#'},
     {id: 4, name: 'Login', link: '#'},
@@ -27,12 +27,12 @@ const NavMenu = ({ toggleMenu = false }: NavMenuProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const navListId = useId();
-
+    const variantClass = toggleMenu ? 'headerNav' : 'footerNav';
     const handleToggle = () => {
         setIsOpen(!isOpen);
     };
     return (
-        <nav className={`NavMenu ${isOpen ? 'is-open' : ''}`}>
+        <nav className={`NavMenu ${variantClass} ${isOpen ? 'is-open' : ''}`}>
             {toggleMenu && (<button 
                 className='NavMenu__toggle'
                 type='button' 
