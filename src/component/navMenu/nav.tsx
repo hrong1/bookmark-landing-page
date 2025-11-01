@@ -2,8 +2,6 @@ import './nav.scss'
 import { useState, useId } from 'react';
 import IconClose from '../../assets/icon-close.svg?react';
 import IconOpen from '../../assets/icon-hamburger.svg?react';
-import IconFacebook from '../../assets/icon-facebook.svg?react';
-import IconTwitter from '../../assets/icon-twitter.svg?react';
 import Logo from '../../assets/logo-bookmark.svg?react';
 
 interface NavItem {
@@ -15,12 +13,11 @@ interface NavItem {
 const navList: NavItem[] = [
     {id: 1, name: 'Features', link: '#features'},
     {id: 2, name: 'Pricing', link: '#'},
-    {id: 3, name: 'Contact', link: '#'},
-    {id: 4, name: 'Login', link: '#'},
+    {id: 3, name: 'Contact', link: '#contact'},
 ]
 
 interface NavMenuProps {
-  toggleMenu?: boolean; 
+    toggleMenu?: boolean; 
 }
 
 const NavMenu = ({ toggleMenu = false }: NavMenuProps) => {
@@ -33,6 +30,7 @@ const NavMenu = ({ toggleMenu = false }: NavMenuProps) => {
     };
     return (
         <nav className={`NavMenu ${variantClass} ${isOpen ? 'is-open' : ''}`}>
+            
             {toggleMenu && (<button 
                 className='NavMenu__toggle'
                 type='button' 
@@ -42,8 +40,7 @@ const NavMenu = ({ toggleMenu = false }: NavMenuProps) => {
                 onClick={handleToggle}>
             {isOpen ? <IconClose /> : <IconOpen />}
             </button>)}
-            {!toggleMenu && (<Logo />)}
-
+            <Logo />
             <ul className="NavMenu__nav-list" id={navListId}>
                 {navList.map(({ id, name, link }) => (
                     <li key={id}>
@@ -51,12 +48,6 @@ const NavMenu = ({ toggleMenu = false }: NavMenuProps) => {
                     </li>
                 ))}
             </ul>
-            {!toggleMenu && (
-                <div className='NavMenu__icons'>
-                    <IconFacebook />
-                    <IconTwitter />
-                </div>
-            )}
         </nav>
     )
 }

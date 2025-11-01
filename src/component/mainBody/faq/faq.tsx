@@ -53,6 +53,9 @@ const FAQ = () => {
                     </div>
                 ))}
             </div>
+            <button className='faq__button' type='button'>
+                More Info
+            </button>
         </section>
     )
 }
