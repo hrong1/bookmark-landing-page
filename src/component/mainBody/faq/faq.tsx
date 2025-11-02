@@ -1,4 +1,5 @@
 import './faq.scss'
+import { useState } from 'react';
 import Arrow from '../../../assets/icon-arrow.svg?react';
 
 interface FAQData {
@@ -32,6 +33,18 @@ const faqList: FAQData[] = [
 
 
 const FAQ = () => {
+    const [activeIds, setActiveIds] = useState(new Set<number>());
+    const handleQuestionClick = (id: number) => {
+        setActiveIds((prevActiveIds) => {
+            const newActiveIds = new Set(prevActiveIds);
+            if (newActiveIds.has(id)) {
+                newActiveIds.delete(id);
+            } else {
+                newActiveIds.add(id);
+            }
+            return newActiveIds;
+        });
+    }
     return (
         <section className='faq'>
             <div className='faq__intro'>
@@ -43,15 +56,29 @@ const FAQ = () => {
                 </p>
             </div>
             <div className='faq__container'>
-                {faqList.map((faq) => (
-                    <div className='faq__section' key={faq.id}>
-                        <h4 className='faq__question'>
-                            {faq.question}
-                            <Arrow />
-                        </h4>
-                        <p className='faq__answer'>{faq.answer}</p>
-                    </div>
-                ))}
+                {faqList.map((faq) => {
+                    const isActive = activeIds.has(faq.id);
+                    return (
+                        <div className={`faq__section ${isActive ? 'active' : ''}`} key={faq.id}>
+                            <h4 
+                                className='faq__question' 
+                                role="button"
+                                onClick={() => handleQuestionClick(faq.id)}
+                                aria-expanded={isActive} 
+                                aria-controls={`faq-answer-${faq.id}`}
+                            >
+                                {faq.question}
+                                <Arrow />
+                            </h4>
+                            <p 
+                                className='faq__answer' 
+                                id={`faq-answer-${faq.id}`}
+                            >
+                                {faq.answer}
+                            </p>
+                        </div>
+                    );
+                })}
             </div>
             <button className='faq__button' type='button'>
                 More Info
