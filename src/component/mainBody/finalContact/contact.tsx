@@ -34,7 +34,7 @@ const Contact = () => {
 
 
     return (
-        <form className={`contact ${isError ? 'is-error' : ''}`} onSubmit={handleSubmit} noValidate>
+        <form id="contact" className={`contact ${isError ? 'is-error' : ''}`} onSubmit={handleSubmit} noValidate>
             <span className='contact__subtitle'>
                 35,000+ already joined
             </span>
@@ -45,6 +45,7 @@ const Contact = () => {
                 className='contact__email' 
                 type="email" 
                 name="email"
+                autoComplete='email'
                 placeholder="Enter your email address"
                 aria-label="Email address for updates"
                 value={email}

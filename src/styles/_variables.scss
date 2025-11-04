@@ -4,6 +4,8 @@ $black: hsl(0, 0%, 0%);
 $black-opacity-50: hsla(0, 0%, 0%, 0.50);
 $grey: hsl(0, 0%, 50%);
 $blue-600: hsl(231, 69%, 60%);
+$blue-800: hsl(230, 32%, 21%);
+$blue-800-opacity-75: hsla(230, 33%, 21%, 0.75);
 $red-400: hsl(0, 94%, 66%);
 $grey-50: hsl(0, 0%, 97%);
 $blue-950: hsl(229, 31%, 21%);
@@ -38,9 +40,9 @@ $border-radius-circle: 50%;
 // animation
 $animation-time: 0.3s;
 // border
-$border-width: 0.1rem;
+$border-width: 2px;
 // opacity
 $default-opacity: 0.5;
 // width
 $toggle-size: 1rem;
-$desktop: 60rem;
+$desktop: 1200px;

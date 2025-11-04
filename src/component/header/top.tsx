@@ -6,9 +6,6 @@ const WebHeader = () => {
     return (
         <header className='webHeader'>
             <NavMenu toggleMenu={true} />
-            <button className='webHeader__login' type='button' aria-label='login your account'>
-                Login
-            </button>
         </header>
     )
 }
