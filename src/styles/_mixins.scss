@@ -1,3 +1,4 @@
+@use './variables';
 
 @mixin flex-column {
     display: flex;
@@ -29,7 +30,29 @@
     justify-content: space-between;
 }
 
-@mixin image-bg ($color: hsl(231, 69%, 60%), $x-offset: 20%, $y-offset: 100%, $shape-radius: 50rem) {
+@mixin title-style (
+    $color: variables.$blue-800, 
+    $size: variables.$fs-xl, 
+    $weight: variables.$font-medium) 
+    {
+        font-size: $size;
+        font-weight: $weight;
+        color: $color;
+
+}
+
+@mixin description-style (
+    $color: variables.$grey, 
+    $size: variables.$fs-sm, 
+    $line-spacing: variables.$line-height-lg) 
+    {
+        color: $color;
+        font-size: $size;
+        line-height: $line-spacing;
+
+}
+
+@mixin image-bg ($color: variables.$blue-600, $x-offset: 20%, $y-offset: 100%, $shape-radius: 50rem) {
     position: relative;
     overflow-x: hidden;
 

@@ -21,15 +21,11 @@
     }
 
     &__title {
-        font-size: $fs-xl;
-        font-weight: $font-medium;
-        color: $blue-800;
+        @include title-style;
     }
 
     &__description {
-        color: $grey;
-        font-size: $fs-sm;
-        line-height: $line-height-lg;
+        @include description-style;
     }
 
     &__buttonSection {

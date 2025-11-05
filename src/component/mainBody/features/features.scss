@@ -1,0 +1,19 @@
+.features {
+    @include flex-column-center;
+    gap: $spacing-3;
+    margin-top: $spacing-6;
+
+    &__intro {
+        @include flex-column;
+        text-align: center;
+        gap: $spacing-3;
+    }
+
+    &__title {
+        @include title-style;
+    }
+
+    &__description {
+        @include description-style;
+    }
+}
