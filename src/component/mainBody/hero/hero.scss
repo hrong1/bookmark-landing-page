@@ -1,0 +1,54 @@
+%button-shape {
+    padding: $spacing-3;
+    border-radius: $border-radius-sm;
+    box-shadow: 0 10px 10px $black-opacity-25;
+}
+
+.heroSection {
+    width: 100%;
+    @include flex-column-center;
+
+    &__imageContainer {
+        width: 100%;
+        @include image-bg;
+    }
+    
+    &__content {
+        @include flex-column-center;
+        padding: $spacing-3;
+        gap: $spacing-3;
+        text-align: center;
+    }
+
+    &__title {
+        font-size: $fs-xl;
+        font-weight: $font-medium;
+        color: $blue-800;
+    }
+
+    &__description {
+        color: $grey;
+        font-size: $fs-sm;
+        line-height: $line-height-lg;
+    }
+
+    &__buttonSection {
+        @include flex-row-between;
+        gap: $spacing-5;
+    }
+
+    &__button {
+        @extend %button-shape;
+
+        &--chrome {
+            background-color: $blue-600;
+            color: $white;
+        }
+
+        &--firefox {
+            background-color: $grey-50;
+            color: $grey;
+        }
+        
+    }
+}

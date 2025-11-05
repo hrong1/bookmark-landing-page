@@ -1,13 +1,3 @@
-@mixin flex-column {
-    display: flex;
-    flex-direction: column;
-}
-
-@mixin center-content {
-    justify-content: center;
-    align-items: center;
-}
-
 @mixin logo-style($text-fill: null, $icon-shape-fill: null, $icon-bg-fill: null) {
     @if $text-fill {
         .logo-text{
@@ -29,9 +19,8 @@
 
 
 .navMenu {
-    @include flex-column;
+    @include flex-column-between;
     width: 100%;
-    justify-content: center;
     gap: $spacing-3;
     padding: $spacing-3;
 
@@ -133,6 +122,14 @@
     }
 
     &.headerNav.is-open {
+        .navMenu__top {
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: $spacing-3;
+            position: fixed;
+        }
+
         .navMenu__bottom {
             transform: translateX(0%);
         }
