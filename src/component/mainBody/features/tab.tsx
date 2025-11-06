@@ -14,10 +14,10 @@ interface TabsProps {
 }
 
 const Tabs = ({ tabsList }: TabsProps) => {
+    const [activeTabId, setActiveTabId] = useState(tabsList[0].id);
     if (tabsList.length === 0) {
         return null;
     }
-    const [activeTabId, setActiveTabId] = useState(tabsList[0].id);
     const activeTab = tabsList.find(tab => tab.id === activeTabId);
     const activeTabImage = `../assets/desktop-image-hero-${activeTab?.id}.jpg`;
     return (

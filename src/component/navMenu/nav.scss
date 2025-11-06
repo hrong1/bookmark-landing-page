@@ -188,6 +188,7 @@
             .navMenu__list-container {
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr; 
+                gap: $spacing-6;
             }
 
             .navMenu__nav-list {
@@ -209,6 +210,7 @@
             }
 
             .navMenu__login {
+                grid-column: 4;
                 background-color: $red-400;
             }
         }

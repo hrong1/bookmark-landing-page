@@ -11,6 +11,7 @@
     &__imageContainer {
         width: 100%;
         @include image-bg;
+        overflow-x: hidden;
     }
     
     &__content {
