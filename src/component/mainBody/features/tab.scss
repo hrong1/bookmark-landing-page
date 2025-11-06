@@ -53,12 +53,12 @@
     &__image-container {
         padding: $spacing-3;
         width: 100%;
-        @include image-bg($x-offset: -40%, $y-offset: 100%);
+        @include image-bg($x-offset: -70%, $y-offset: 80%);
     }
 
     &__image {
         margin-bottom: 20%;
-        background-color: $grey-50;
+        background-color: $image-bg-color;
         border-radius: $border-radius-sm;
     }
 
@@ -87,5 +87,41 @@
         border-radius: $border-radius-sm;
         box-shadow: 0 10px 10px $black-opacity-25;
         display: none;
+    }
+
+    @media (min-width: $desktop) {
+        &__buttonContainer {
+            width: 100%;
+            max-width: $section-width + 10rem;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        &__button {
+            &:first-child {
+                border-top: none;
+            }
+
+            &::before {
+                width: 100%;
+            }
+        }
+
+        &__content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: $spacing-6;
+        }
+
+        &__moreInfo {
+            display: block;
+        }
+
+        &__text-container {
+            align-items: start;
+            text-align: start;
+            max-width: $section-width;
+        }
     }
 }

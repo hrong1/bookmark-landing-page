@@ -54,7 +54,6 @@
 
 @mixin image-bg ($color: variables.$blue-600, $x-offset: 20%, $y-offset: 100%, $shape-radius: 50rem) {
     position: relative;
-    overflow-x: hidden;
 
     &::before {
         content: '';
@@ -62,7 +61,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
+        width: 200%;
         height: 50%;
         z-index: -1;
         background-color: $color;

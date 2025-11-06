@@ -47,4 +47,18 @@
         }
         
     }
+
+    @media (min-width: $desktop) {
+        flex-direction: row-reverse;
+
+        &__content {
+            text-align: left;
+            align-items: start;
+        }
+
+        &__title {
+            font-size: $fs-xxxl;
+        }
+
+    }
 }

@@ -1,6 +1,5 @@
 body {
-    font-family: $font-main;
-    width: 100%;
+    overflow-x: hidden;
 }
 
 body:has(.headerNav.is-open) {

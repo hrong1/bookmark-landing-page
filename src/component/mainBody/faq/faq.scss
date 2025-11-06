@@ -79,4 +79,9 @@
         border-radius: $border-radius-sm;
         box-shadow: 0 10px 10px $black-opacity-25;
     }
+
+    @media (min-width: $desktop) {
+        max-width: $section-width;
+        margin: 0 auto;
+    }
 }

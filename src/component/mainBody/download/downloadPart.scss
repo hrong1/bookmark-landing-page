@@ -22,4 +22,29 @@
         grid-template-rows: 1fr 1fr 1fr;
         gap: $spacing-3;
     }
+
+    @media (min-width: $desktop) {
+        &__intro {
+            max-width: $section-width;
+            margin: 0 auto;
+        }
+
+        &__container {
+            @include flex-row;
+            align-items: flex-start;
+            gap: $spacing-6;
+
+            > *:nth-child(1) {
+                margin-top: 0; 
+            }
+
+            > *:nth-child(2) {
+                margin-top: $spacing-6;
+            }
+
+            > *:nth-child(3) {
+                margin-top: $spacing-6 * 2;
+            }
+        }
+    }
 }

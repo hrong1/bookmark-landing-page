@@ -51,10 +51,11 @@ const Tabs = ({ tabsList }: TabsProps) => {
                         <div className='tabs__text-container'>
                             <h3 className='tabs__title'>{activeTab.title}</h3>
                             <p className='tabs__detail'>{activeTab.detail}</p>
+                            <button type='button' className='tabs__moreInfo'>
+                                More Info
+                            </button>
                         </div>
-                        <button type='button' className='tabs__moreInfo'>
-                            More Info
-                        </button>
+                        
                     </div>
                 )}
             </div>

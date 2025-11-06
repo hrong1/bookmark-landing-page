@@ -17,4 +17,11 @@
     &__description {
         @include description-style;
     }
+
+    @media (min-width: $desktop) {
+        &__intro {
+            max-width: $section-width;
+            margin: 0 auto;
+        }
+    }
 }

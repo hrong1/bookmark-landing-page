@@ -161,4 +161,79 @@
             }
         }
     }
+
+    @media (min-width: $desktop) {
+        &.headerNav.is-open {
+            .navMenu__logo {
+                @include logo-style($blue-950, $white, $blue-600);
+            }
+        }
+
+        &.headerNav {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            .navMenu__icons,
+            .navMenu__toggle {
+                display: none;
+            }
+
+            .navMenu__bottom {
+                @include flex-row;
+                transform: unset;
+                background-color: transparent;
+                position: static;
+            }
+
+            .navMenu__list-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr; 
+            }
+
+            .navMenu__nav-list {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-column: 1 / 4;
+
+                li {
+                    border-top: none;
+                    a {
+                        color: $blue-950;
+                        
+                    }
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+
+            .navMenu__login {
+                background-color: $red-400;
+            }
+        }
+
+         &.footerNav {
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+            width: 100%;
+
+            .navMenu__bottom {
+                width: 100%;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .navMenu__nav-list {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .navMenu__icons {
+                gap: $spacing-5;
+            }
+        }
+    }
 }

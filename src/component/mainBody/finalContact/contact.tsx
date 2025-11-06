@@ -36,32 +36,36 @@ const Contact = () => {
 
     return (
         <form id="contact" className={`contact ${isError ? 'is-error' : ''}`} onSubmit={handleSubmit} noValidate>
-            <span className='contact__subtitle'>
-                35,000+ already joined
-            </span>
-            <h3 className='contact__title'>
-                Stay up-to-date with what we’re doing
-            </h3>
-            <div className='contact__input'>
-                <input 
-                    className='contact__input--email' 
-                    type="email" 
-                    name="email"
-                    autoComplete='email'
-                    placeholder="Enter your email address"
-                    aria-label="Email address for updates"
-                    value={email}
-                    onChange={handleChange}
-                    onFocus={handleFocus}
-                />
-                <Error className='contact__input--error'/>
-                <small className="contact__input--error-text">
-                    Whoops, make sure it’s an email
-                </small>
+            <div className='contact__form'>
+                <span className='contact__subtitle'>
+                    35,000+ already joined
+                </span>
+                <h3 className='contact__title'>
+                    Stay up-to-date with what we’re doing
+                </h3>
+                <div className='contact__info-submit'>
+                    <div className='contact__input'>
+                        <input 
+                            className='contact__input--email' 
+                            type="email" 
+                            name="email"
+                            autoComplete='email'
+                            placeholder="Enter your email address"
+                            aria-label="Email address for updates"
+                            value={email}
+                            onChange={handleChange}
+                            onFocus={handleFocus}
+                        />
+                        <Error className='contact__input--error'/>
+                        <small className="contact__input--error-text">
+                            Whoops, make sure it’s an email
+                        </small>
+                    </div>
+                    <button className='contact__submit' type='submit'>
+                        Contact Us
+                    </button>
+                </div>
             </div>
-            <button className='contact__submit' type='submit'>
-                Contact Us
-            </button>
         </form>
     )
 }
