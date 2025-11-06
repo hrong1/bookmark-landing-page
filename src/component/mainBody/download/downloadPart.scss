@@ -1,0 +1,25 @@
+.download {
+    @include flex-column-center;
+    padding: $spacing-3;
+    gap: $spacing-5;
+
+    &__intro {
+        @include flex-column-center;
+        gap: $spacing-3;
+        text-align: center;
+    }
+
+    &__title {
+        @include title-style;
+    }
+
+    &__description {
+        @include description-style;
+    }
+
+    &__container {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: $spacing-3;
+    }
+}

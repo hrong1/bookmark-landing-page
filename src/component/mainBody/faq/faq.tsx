@@ -61,7 +61,7 @@ const FAQ = () => {
                     return (
                         <div className={`faq__section ${isActive ? 'active' : ''}`} key={faq.id}>
                             <h4 
-                                className='faq__question' 
+                                className='faq__section--question' 
                                 role="button"
                                 onClick={() => handleQuestionClick(faq.id)}
                                 aria-expanded={isActive} 
@@ -71,7 +71,7 @@ const FAQ = () => {
                                 <Arrow />
                             </h4>
                             <p 
-                                className='faq__answer' 
+                                className='faq__section--answer' 
                                 id={`faq-answer-${faq.id}`}
                             >
                                 {faq.answer}
